@@ -159,10 +159,12 @@
 
 \def\_pgf_kvsplit#1/#2 #3\_end{{#2}{#3}}
 
-\def\pgfutil@addpdfresource@extgs#1{\_addpageresource{ExtGState}\_pgf_kvsplit#1\_end}
-\def\pgfutil@addpdfresource@colorspaces#1{\_addpageresource{ColorSpace}\_pgf_kvsplit#1\_end}
-\def\pgfutil@addpdfresource@patterns#1{\_addpageresource{Pattern}\_pgf_kvsplit#1\_end}
+\def\pgfutil@addpdfresource@extgs#1{\addpageresource{ExtGState}\_pgf_kvsplit#1\_end}
+\def\pgfutil@addpdfresource@colorspaces#1{\addpageresource{ColorSpace}\_pgf_kvsplit#1\_end}
+\def\pgfutil@addpdfresource@patterns#1{\addpageresource{Pattern}\_pgf_kvsplit#1\_end}
 \let\pgfutil@setuppdfresources=\relax
+\let\pgf@sys@pdf@check@resources=\relax
+\def\pgf@sys@pdf@possible@resources{\pageresources}
 
 
 % pgfutil@minipage
@@ -204,7 +206,7 @@
 \def\pgfutil@font@normalfont{\_rm}
 \def\pgfutil@font@itshape{\_it}
 \def\pgfutil@font@bfseries{\_bf}
-\def\pgfutil@selectfont{\_currvar}
+\def\pgfutil@selectfont{\_rm}
 
 
 % Extra counters, registers, boxes
